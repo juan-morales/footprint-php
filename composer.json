@@ -1,0 +1,19 @@
+{
+    "name": "jcm/footprint-php",
+    "description": "composer package that allows you to monitor and retrieve custom stats about your running php script",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Footprint\\" : "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "juan carlos morales",
+            "email": "jcmargentina@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
