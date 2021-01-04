@@ -1,3 +1,4 @@
 /vendor/
+/test/tmp*
 .phpunit.cache/
 composer.lock
