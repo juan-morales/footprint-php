@@ -1,16 +1,17 @@
 <?php
 
-namespace Footprint;
+namespace Footprint\Modules;
 
 use Footprint\Interfaces\IModule;
+use Footprint\Tracker;
 
 class CSVModule implements IModule
 {
-    const MODULE_ID = "CSV";
+    const MODULE_ID = "CSV_Module";
     protected $fileHandler;
 
     public function __construct(string $filename) {
-        if (!$this->fileHandler = fopen($filename, "a+")) {
+        if (!$this->fileHandler = fopen($filename, "w+")) {
             return;
         }
     }
@@ -20,30 +21,32 @@ class CSVModule implements IModule
     }
 
     public function onInit(Tracker &$tracker) {
-        fputcsv($this->fileHandler, ["Initialization", "OK"]);
+        return;
     }
 
     public function onEnd(Tracker &$tracker) {
-        fputcsv($this->fileHandler, ["End", "OK"]);
         fclose($this->fileHandler);
+        return;
     }
 
     public function onLoad(Tracker &$tracker) {
-        fputcsv($this->fileHandler, ["Load", "OK"]);
+        return;
     }
 
     public function onUnload(Tracker &$tracker) {
-        fputcsv($this->fileHandler, ["Unload", "OK"]);
+        return;
     }
 
     public function onLog(Tracker &$tracker) {
-        $data1 = $tracker->getLogDataByKey("CSV_key1");
-        $data2 = $tracker->getLogDataByKey("CSV_key2");
-        fputcsv($this->fileHandler, [$tracker->getLogId(), $data1, $data2]);
+        fputcsv(
+            $this->fileHandler,
+            [$tracker->getLogId(), $tracker->getLogDataAsJSON()],
+            ",",
+            "'"
+        );
     }
 
     public function onLogBuild(Tracker &$tracker) {
-        $tracker->addLogData("CSV_key1", "CSV_data1");
-        $tracker->addLogData("CSV_key2", "CSV_data2");
+        return;
     }
 }

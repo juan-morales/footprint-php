@@ -56,6 +56,10 @@ class Tracker
         return $this->currentLogData;
     }
 
+    public function getLogDataAsJSON() {
+        return json_encode($this->currentLogData);
+    }
+
     public function getLogId() {
         return $this->currentLogId;
     }
