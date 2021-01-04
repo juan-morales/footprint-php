@@ -5,9 +5,9 @@ namespace Footprint\Modules;
 use Footprint\Interfaces\IModule;
 use Footprint\Tracker;
 
-class CSVModule implements IModule
+class CSV implements IModule
 {
-    const MODULE_ID = "CSV_Module";
+    const MODULE_ID = "CSV";
     protected $fileHandler;
 
     public function __construct(string $filename) {

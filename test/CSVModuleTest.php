@@ -2,13 +2,13 @@
 
 use PHPUnit\Framework\TestCase;
 use Footprint\Tracker;
-use Footprint\Modules\CSVModule;
+use Footprint\Modules\CSV;
 
-class CSVModuleTestTest extends TestCase 
+class CSVModuleTest extends TestCase 
 {
     public function testModule() {
         $tracker = new Tracker();
-        $module = new CSVModule("test/tmpCSVModule");
+        $module = new CSV("test/tmpCSVModule");
         $tracker->loadModule($module);
         $tracker->init();
         $tracker->log();
@@ -16,9 +16,9 @@ class CSVModuleTestTest extends TestCase
         $tracker->log();
         $tracker->end();
 
-        $this->assertFileExists("tmpCSVModule");
+        $this->assertFileExists("test/tmpCSVModule");
         
-        $fileHandler = fopen("tmpCSVModule", "r");
+        $fileHandler = fopen("test/tmpCSVModule", "r");
 
         while ($data = fgetcsv($fileHandler, 0, ",", "'")) {
             $this->assertCount(2, $data);
