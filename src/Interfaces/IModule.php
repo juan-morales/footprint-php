@@ -19,4 +19,6 @@ interface IModule
     public function onLog(Tracker &$tracker);
 
     public function onLogBuild(Tracker &$tracker);
+
+    public function getKeys() : array;
 }

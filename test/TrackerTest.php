@@ -102,6 +102,10 @@ class TrackerTest extends TestCase
                 $tracker->setData("TEST_load", "TEST_OK");
             }
 
+            public function getKeys() : array {
+                return [];
+            }
+
             public function onUnload(Tracker &$tracker) {
                 $tracker->setData("TEST_unload", "TEST_OK");
             }

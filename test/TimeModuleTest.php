@@ -19,13 +19,10 @@ class TimeModuleTest extends TestCase
         $logDataStep3 = $tracker->getLogData();
         $tracker->end();
 
-        $this->assertArrayHasKey($module->getId()."_total_seconds", $logDataStep1);
-        $this->assertArrayHasKey($module->getId()."_step_seconds", $logDataStep1);
-
-        $this->assertArrayHasKey($module->getId()."_total_seconds", $logDataStep2);
-        $this->assertArrayHasKey($module->getId()."_step_seconds", $logDataStep2);
-
-        $this->assertArrayHasKey($module->getId()."_total_seconds", $logDataStep3);
-        $this->assertArrayHasKey($module->getId()."_step_seconds", $logDataStep3);
+        foreach($module->getKeys() as $key) {
+            $this->assertArrayHasKey($key, $logDataStep1);
+            $this->assertArrayHasKey($key, $logDataStep2);
+            $this->assertArrayHasKey($key, $logDataStep3);
+        }
     }
 }

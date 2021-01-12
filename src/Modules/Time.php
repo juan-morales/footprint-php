@@ -8,6 +8,9 @@ use Footprint\Tracker;
 class Time implements IModule
 {
     const MODULE_ID = "TIME";
+    const KEY_TOTAL_TIME = self::MODULE_ID."_total";
+    const KEY_STEP_TIME = self::MODULE_ID."_step";
+
     protected $totalTime = 0;
     protected $microtime = null;
     protected $previousStep = null;
@@ -47,7 +50,14 @@ class Time implements IModule
         $this->currentStep = round(($now - $this->previousStep), 2);
         $this->previousStep = $now;
         
-        $tracker->addLogData($this->getId()."_total_seconds", (string)$this->totalTime);
-        $tracker->addLogData($this->getId()."_step_seconds", (string)$this->currentStep);
+        $tracker->addLogData(self::KEY_TOTAL_TIME, (string)$this->totalTime);
+        $tracker->addLogData(self::KEY_STEP_TIME, (string)$this->currentStep);
+    }
+
+    public function getKeys() : array {
+        return [
+            self::KEY_TOTAL_TIME,
+            self::KEY_STEP_TIME,
+        ];
     }
 }

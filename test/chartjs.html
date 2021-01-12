@@ -1,0 +1,103 @@
+
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+            </head>
+            <body>
+                <div style="width: 100%; height: 30%;">
+                    <canvas id="myChart"></canvas>
+                </div>
+                
+                <script>
+                    let ctx = document.getElementById("myChart").getContext("2d");
+                    
+                    let myData = {
+                        labels: ["2021-01-12 18:18:17","2021-01-12 18:18:18","2021-01-12 18:18:20","2021-01-12 18:18:21"],
+                        datasets:[
+                            {
+            label: 'MEMORY_memory_usage',
+            data: [5332720,6384888,8482600,4292928],
+            borderColor: 'red',
+            pointBackgroundColor: 'red',
+            borderWidth: 1,
+            fill: false,
+            lineTension: 0.1
+        },{
+            label: 'MEMORY_memory_real_usage',
+            data: [6291456,8392704,10489856,6291456],
+            borderColor: 'blue',
+            pointBackgroundColor: 'blue',
+            borderWidth: 1,
+            fill: false,
+            lineTension: 0.1
+        },{
+            label: 'MEMORY_memory_peak',
+            data: [5383176,7437904,10584216,10584216],
+            borderColor: 'green',
+            pointBackgroundColor: 'green',
+            borderWidth: 1,
+            fill: false,
+            lineTension: 0.1
+        },{
+            label: 'MEMORY_memory_real_peak',
+            data: [6291456,8392704,12591104,12591104],
+            borderColor: 'black',
+            pointBackgroundColor: 'black',
+            borderWidth: 1,
+            fill: false,
+            lineTension: 0.1
+        },{
+            label: 'TIME_total',
+            data: ["0","1","3.01","4.01"],
+            borderColor: 'purple',
+            pointBackgroundColor: 'purple',
+            borderWidth: 1,
+            fill: false,
+            lineTension: 0.1
+        },{
+            label: 'TIME_step',
+            data: ["0","1","2.01","1"],
+            borderColor: 'red',
+            pointBackgroundColor: 'red',
+            borderWidth: 1,
+            fill: false,
+            lineTension: 0.1
+        } 
+                        ],
+                    };
+
+                    let myOptions = {
+                        tooltips: {
+                            mode: "index",
+                            intersect: false
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }],
+                            xAxes: [{
+                                type: "time",
+                                distribution: "series",
+                                ticks: {
+                                    source: "auto",
+                                    autoSkip: true
+                                },
+                                time: {
+                                    unit: "second",
+                                    stepSize: 1,
+                                }
+                            }]
+                        }
+                    };
+
+                    let myChart = new Chart(ctx, {
+                        type: "line",
+                        data: myData,
+                        options: myOptions
+                    });
+                </script>
+            </body>
+        </html>

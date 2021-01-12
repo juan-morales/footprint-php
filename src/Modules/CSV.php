@@ -49,4 +49,8 @@ class CSV implements IModule
     public function onLogBuild(Tracker &$tracker) {
         return;
     }
+
+    public function getKeys() : array {
+        return [];
+    }
 }

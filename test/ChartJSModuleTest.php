@@ -14,12 +14,16 @@ class ChartsJSModuleTest extends TestCase
         $moduleTime = new Time();
         $moduleMem = new Memory();
 
-        $module = new ChartJS();
-        $module->addKey("MEMORY_memory_usage_bytes");
-        $module->addKey("MEMORY_memory_peak_bytes");
-        $module->addKey("TIME_total_seconds");
-        $module->addKey("TIME_step_seconds");
+        $module = new ChartJS("test/chartjs.html");
 
+        foreach($moduleMem->getKeys() as $key) {
+            $module->addKey($key);
+        }
+
+        foreach($moduleTime->getKeys() as $key) {
+            $module->addKey($key);
+        }
+        
         $tracker = new Tracker();
         $tracker->loadModule($moduleMem);
         $tracker->loadModule($moduleTime);
@@ -32,9 +36,11 @@ class ChartsJSModuleTest extends TestCase
         sleep(2);
         $mem = str_repeat($mem, 2);
         $tracker->log();
-        sleep(2);
+        sleep(1);
         $mem = str_repeat("XXX", 2000);
         $tracker->log();
         $tracker->end();
+
+        $this->assertFileExists("test/chartjs.html");
     }
 }

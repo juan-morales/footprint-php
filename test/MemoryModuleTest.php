@@ -15,9 +15,8 @@ class MemoryModuleTest extends TestCase
         $logData = $tracker->getLogData();
         $tracker->end();
 
-        $this->assertTrue(array_key_exists($module->getId()."_memory_usage_bytes", $logData));
-        $this->assertTrue(array_key_exists($module->getId()."_memory_real_usage_bytes", $logData));
-        $this->assertTrue(array_key_exists($module->getId()."_memory_peak_bytes", $logData));
-        $this->assertTrue(array_key_exists($module->getId()."_memory_real_peak_bytes", $logData));
+        foreach($module->getKeys() as $key) {
+            $this->assertTrue(array_key_exists($key, $logData));
+        }
     }
 }
