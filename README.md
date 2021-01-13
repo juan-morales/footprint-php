@@ -6,10 +6,10 @@ Its build in a modular way handled by event triggers, really easy to follow and 
 
 The package already come with some modules likes:
 
--   ChartJS line chart report
--   CSV report
--   Time-tracking
--   Memory tracking
+-   ChartJS line chart report (output only)
+-   CSV report (log and output)
+-   Time-tracking (log)
+-   Memory tracking (log)
 
 Code is really simple and short, so you can quickly pick it up and create your own code.
 
@@ -114,7 +114,9 @@ Please refer to the wiki section of the project to learn more about the package 
 
 # Contributing to the project
 
-This is a project I have done in order to creat
+Even though I am working on this package in order to improe it, feel free to open issues, send pull requests, etc. 
+
+All help is welcome.
 
 # Autor
 
