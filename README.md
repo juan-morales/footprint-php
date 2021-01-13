@@ -101,7 +101,7 @@ class SomeClassName
 }
 ```
 
-![Output report using ChartJS](https://github.com/juan-morales/footprint-php/blob/main/output_example.png "Output with ChartJS")
+![Output report using ChartJS](https://github.com/juan-morales/footprint-php/blob/main/output_example.jpg "Output with ChartJS")
 
 
 # Why this package?
