@@ -16,5 +16,11 @@
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "repositories": {
+        "packagist.org": {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
+    }
 }
