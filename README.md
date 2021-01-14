@@ -1,5 +1,7 @@
 # footprint-php
 
+[![Latest Stable Version](https://poser.pugx.org/jcm/footprint-php/v)](//packagist.org/packages/jcm/footprint-php) [![Total Downloads](https://poser.pugx.org/jcm/footprint-php/downloads)](//packagist.org/packages/jcm/footprint-php) [![Latest Unstable Version](https://poser.pugx.org/jcm/footprint-php/v/unstable)](//packagist.org/packages/jcm/footprint-php) [![License](https://poser.pugx.org/jcm/footprint-php/license)](//packagist.org/packages/jcm/footprint-php)
+
 Composer package that allows you to trace/monitor and retrieve/calculate/generate custom stats about your running php script.
 
 It is build in a modular way and event triggers, really easy to follow and customize.
