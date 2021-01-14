@@ -1,14 +1,14 @@
 # footprint-php
 
-Composer package that allows you to closely monitor and retrieve custom stats about your running php script.
+Composer package that allows you to trace/monitor and retrieve/calculate/generate custom stats about your running php script.
 
-Its build in a modular way handled by event triggers, really easy to follow and customize.
+It is build in a modular way and event triggers, really easy to follow and customize.
 
-The package already come with some modules likes:
+The package already comes with some modules likes:
 
 -   ChartJS line chart report (output only)
 -   CSV report (log and output)
--   Time-tracking (log)
+-   Time tracking (log)
 -   Memory tracking (log)
 
 Code is really simple and short, so you can quickly pick it up and create your own code.
@@ -96,7 +96,10 @@ class SomeClassName
         //finally we finish the track
         $tracker->end();
         
-        //and we should hae a file called report.html that should look something like the next screenshot
+        /**
+        * Then in another file, create an instance of this class, call the testMethod() method
+        * and we should have a file called report.html that should look something like the next screenshot
+        */
     }
 }
 ```
@@ -108,15 +111,19 @@ class SomeClassName
 
 This package was created in order to have a simple and small package, customizable, that could allow you to retrieve data while you execute your php scripts.
 
-# Documentation
+# Documentation (Work in progress)
 
 Please refer to the wiki section of the project to learn more about the package design, usage, and how to extend it.
 
 # Contributing to the project
 
-Even though I am working on this package in order to improe it, feel free to open issues, send pull requests, etc. 
+Even though I am working on this package in order to improve it, feel free to open issues, send pull requests, creating new modules or enhancing the existing ones, etc. 
 
-All help is welcome.
+It is possible to create advance modules (like a live dashboard with websocket connection to update data on it, so get can hae a real-time dashboard, etc.), but for the first release of this package I wanted to keep it simple and functional.
+
+I am thinking about decouple the modules and put them in different repositories, but ... maybe version 2.
+
+**All kind of help is welcome**
 
 # Autor
 
