@@ -121,7 +121,7 @@ Please refer to the wiki section of the project to learn more about the package 
 
 Even though I am working on this package in order to improve it, feel free to open issues, send pull requests, creating new modules or enhancing the existing ones, etc. 
 
-It is possible to create advance modules (like a live dashboard with websocket connection to update data on it, so get can hae a real-time dashboard, etc.), but for the first release of this package I wanted to keep it simple and functional.
+It is possible to create advance modules (like a live dashboard with websocket connection to update data on it, so we can have a real-time dashboard, etc.), but for the first release of this package I wanted to keep it simple and functional.
 
 I am thinking about decouple the modules and put them in different repositories, but ... maybe version 2.
 
