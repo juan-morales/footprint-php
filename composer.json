@@ -2,6 +2,7 @@
     "name": "jcm/footprint-php",
     "description": "composer package that allows you to monitor and retrieve custom stats about your running php script",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Footprint\\" : "src/"
@@ -17,6 +18,9 @@
         "phpunit/phpunit": "^9.5"
     },
     "minimum-stability": "stable",
+    "require": {
+         "php": "^7.0"
+    }
     "repositories": {
         "packagist.org": {
             "type": "composer",
