@@ -1,9 +1,9 @@
 # footprint-php
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/jcm/footprint-php)
-[![Latest Release Version](https://img.shields.io/github/v/release/juan-morales/footprint-php)
-[![Total Downloads](https://img.shields.io/packagist/dt/jcm/footprint-php) 
-[![License](https://img.shields.io/packagist/l/jcm/footprint-php)
+![Latest Stable Version](https://img.shields.io/packagist/v/jcm/footprint-php)
+![Latest Release Version](https://img.shields.io/github/v/release/juan-morales/footprint-php)
+![Total Downloads](https://img.shields.io/packagist/dt/jcm/footprint-php)
+![License](https://img.shields.io/packagist/l/jcm/footprint-php)
 
 Composer package that allows you to trace/monitor and retrieve/calculate/generate custom stats about your running php script.
 
