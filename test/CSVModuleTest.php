@@ -7,8 +7,10 @@ use Footprint\Modules\CSV;
 class CSVModuleTest extends TestCase 
 {
     public function testModule() {
+        @unlink("test/files/tmpCSVModule");
+
         $tracker = new Tracker();
-        $module = new CSV("test/tmpCSVModule");
+        $module = new CSV("test/files/tmpCSVModule");
         $tracker->loadModule($module);
         $tracker->init();
         $tracker->log();
@@ -16,9 +18,9 @@ class CSVModuleTest extends TestCase
         $tracker->log();
         $tracker->end();
 
-        $this->assertFileExists("test/tmpCSVModule");
+        $this->assertFileExists("test/files/tmpCSVModule");
         
-        $fileHandler = fopen("test/tmpCSVModule", "r");
+        $fileHandler = fopen("test/files/tmpCSVModule", "r");
 
         while ($data = fgetcsv($fileHandler, 0, ",", "'")) {
             $this->assertCount(2, $data);

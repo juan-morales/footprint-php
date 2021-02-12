@@ -6,15 +6,17 @@ use Footprint\Modules\ChartJS;
 use Footprint\Modules\Memory;
 use Footprint\Modules\Time;
 
-class ChartsJSModuleTest extends TestCase 
+class ChartJSModuleTest extends TestCase 
 {
     public function testModule() {
+        @unlink("test/files/chartjs.html");
+
         $mem = str_repeat("X", 1024 * 1024);
         
         $moduleTime = new Time();
         $moduleMem = new Memory();
 
-        $module = new ChartJS("test/chartjs.html");
+        $module = new ChartJS("test/files/chartjs.html");
 
         foreach($moduleMem->getKeys() as $key) {
             $module->addKey($key);
@@ -41,6 +43,6 @@ class ChartsJSModuleTest extends TestCase
         $tracker->log();
         $tracker->end();
 
-        $this->assertFileExists("test/chartjs.html");
+        $this->assertFileExists("test/files/chartjs.html");
     }
 }
