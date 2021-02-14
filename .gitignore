@@ -1,4 +1,5 @@
 /vendor/
 /test/tmp*
+/test/files/tmp*
 .phpunit.cache/
 composer.lock
