@@ -12,6 +12,11 @@ class CSVModuleTest extends TestCase
         $tracker = new Tracker();
         $module = new CSV("test/files/tmpCSVModule");
         $tracker->loadModule($module);
+        
+        $tracker->onLogBuild(function ($logId, $logData) use ($tracker) {
+            $tracker->addLogData("testKey", "testData");
+        });
+        
         $tracker->init();
         $tracker->log();
         $tracker->log();
@@ -25,7 +30,7 @@ class CSVModuleTest extends TestCase
         while ($data = fgetcsv($fileHandler, 0, ",", "'")) {
             $this->assertCount(2, $data);
             $this->assertJsonStringEqualsJsonString(
-                json_encode([]),
+                json_encode(["testKey" => "testData"]),
                 $data[1]
             );
             $this->assertMatchesRegularExpression('/\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d_.*/', $data[0]);
